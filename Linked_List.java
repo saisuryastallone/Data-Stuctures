@@ -1,7 +1,7 @@
 public class Linked_List {
     private Node head;
 
-    class Node{
+    class Node{ //Node has a value and next link
         public int value;
         public Node next;
     }
@@ -18,8 +18,8 @@ public class Linked_List {
     public void insertAtFront(int item) {
         Node first = new Node();
         first.value =item;
-        first.next= head;
-        head = first;
+        first.next= head;      //Set the value of the new node's next to head which holds reference to head node
+        head = first;          //Update the head to refer to the newly added node
 
     }
 
@@ -28,33 +28,33 @@ public class Linked_List {
         Node last = new Node();
         last.value = item;
         last.next =null;
-        Node x = head;
-        while(x.next!=null){
+        Node x = head;           //Initialize a node to head to traverse to the end node
+        while(x.next!=null){     //when x.next holds null then we have reached the end node
             x=x.next;
 
         }
-        x.next = last;
+        x.next = last;            //Update the x.next to the newly added node reference variable
     }
 
     //Deletion of a node
     public void delete(int item){
-        Node n = head;
-        Node m=head.next;
+        Node n = head;             //Initialize a node with head node reference
+        Node m=head.next;          //Initialize another node with head node's next so that this refers to one node behind current node used for search
         while(n!=null){
             if(n.value==item){
                 m.next=n.next;
             }
-            m=n;
-            n=n.next;
+            m=n;                    //Again update the lagging node m to current node n for the use in next iteration
+            n=n.next;               //Update the current node used for search i.e n to n.next to progress to the next node
         }
     }
 
     //Print Elements of LinkedList
     public void printElements() {
-        Node z = head;
-        while ((z!=null)){
+        Node z = head;               //Initialize a node to head to traverse to the end node
+        while ((z!=null)){           //when z holds null then we have reached the end node
             System.out.println(z.value);
-            z=z.next;
+            z=z.next;                //Update the value of current node to current node's next i.e. z to z.next to progress to the next node of the linked list
         }
     }
 
