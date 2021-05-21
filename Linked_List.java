@@ -29,6 +29,9 @@ public class Linked_List {
         n.value = item;
         n.next = null;
         Node h = head;
+        if(index==0){
+            insertAtFirst(item);
+        }    
         for (int i=0;i<index-1;i++){    //Use for loop to traverse to a node that corresponds to the given index number 
             h=h.next;                   //h.next within the for loop helps reach that particular node at that given index
         }
