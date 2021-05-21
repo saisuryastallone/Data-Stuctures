@@ -22,6 +22,20 @@ public class Linked_List {
         head = first;          //Update the head to refer to the newly added node
 
     }
+    
+    //Insertion at a particular index
+    public void insertAt(int index, int item){
+        Node n = new Node();
+        n.value = item;
+        n.next = null;
+        Node h = head;
+        for (int i=0;i<index-1;i++){    //Use for loop to traverse to a node that corresponds to the given index number 
+            h=h.next;                   //h.next within the for loop helps reach that particular node at that given index
+        }
+        n.next=h.next;                  //First assign the next of node at given index to the newly added added node's next
+        h.next=n;                       //Now, assign the next of node at given index to newly added node reference
+    }
+
 
     //Insertion at the last
     public void insertAtLast(int item) {
