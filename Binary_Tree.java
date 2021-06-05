@@ -60,13 +60,6 @@ public class Binary_Tree {
 		
 	}
 	
-	// Now it's time to delete some nodes
-	public boolean delete(int item) {
-		
-		
-	
-		return true;
-	}
 	
 	// Finally, let's display our tree
 	public void showTree(Node n) {
